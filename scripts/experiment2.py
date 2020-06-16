@@ -32,12 +32,12 @@ def run_experiment(namespace, nginx_job_config, edl_cpu_job_config, filename):
     for job in edl_jobs:
         handle.wait_edl_job_running(job)
 
-    time.sleep(100)
+    time.sleep(20)
 
     # 3. scale nginx jobs
     handle.start_nginx_job(nginx_jobs[0])
-    sequences = [30, 65, 100, 65, 30]
-    handle.scale_nginx_job(nginx_jobs[0], 500, sequences)
+    sequences = [3, 6, 9, 6, 3]
+    handle.scale_nginx_job(nginx_jobs[0], 80, sequences)
 
     # 4. stop job
     handle.delete_nginx_jobs(nginx_jobs)
@@ -59,8 +59,8 @@ if __name__ == '__main__':
     nginx_job_config = {
         "job_name": "nginx",
         "image": "nginx:1.7.9",
-        "cpu_num": 2,
-        "memory": "4096Mi",
+        "cpu_num": 1,
+        "memory": "1024Mi",
         "replicas": 1,
         "priority": "high",
     }
@@ -69,19 +69,19 @@ if __name__ == '__main__':
 
     edl_cpu_job_config = {
         "image": image,
-        "num_epochs": 5000,
+        "num_epochs": 60,
         "job_name": "edl-cpu-qianren",
-        "ps_num": 4,
-        "worker_num": 16,
+        "ps_num": 2,
+        "worker_num": 10,
         "use_go_ps": False,
-        "master_cpu": 4,
-        "master_memory": "8192Mi",
+        "master_cpu": 1,
+        "master_memory": "1024Mi",
         "master_priority": "high",
-        "ps_cpu": 4,
-        "ps_memory": "8192Mi",
+        "ps_cpu": 1,
+        "ps_memory": "1024Mi",
         "ps_priority": "high",
-        "worker_cpu": 2,
-        "worker_memory": "4096Mi",
+        "worker_cpu": 1,
+        "worker_memory": "1024Mi",
         "worker_priority": "low",
     }
 

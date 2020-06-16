@@ -81,5 +81,5 @@ if __name__ == '__main__':
     }
 
     run_experiment(namespace, edl_cpu_job_config, "experiment1-studygroup")
-    time.sleep(100)
+    time.sleep(30)
     run_experiment(namespace, edl_cpu_job_config, "experiment1-controlgroup")
