@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
     edl_cpu_job_config = {
         "image": image,
-        "num_epochs": 1,
+        "num_epochs": 20,
         "job_name": "edl-cpu-qianren",
         "ps_num": 2,
         "worker_num": 6,
