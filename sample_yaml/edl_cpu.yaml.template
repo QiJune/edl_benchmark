@@ -21,10 +21,10 @@ spec:
       'ParameterServerStrategy' --checkpoint_steps '0' --checkpoint_dir '' --keep_checkpoint_max
       '0' --output 'model_output' --docker_image_repository ''
       --image_base '' --image_name '' --job_name '${job_name}' --master_resource_request
-      'cpu=${master_cpu},memory=${master_memory},ephemeral-storage=10240Mi' --master_resource_limit '' --num_workers
-      '${worker_num}' --worker_resource_request 'cpu=${worker_cpu},memory=${worker_memory},ephemeral-storage=10240Mi'
+      'cpu=${master_cpu},memory=${master_memory},ephemeral-storage=1024Mi' --master_resource_limit '' --num_workers
+      '${worker_num}' --worker_resource_request 'cpu=${worker_cpu},memory=${worker_memory},ephemeral-storage=1024Mi'
       --worker_resource_limit '' --master_pod_priority '${master_priority}' --worker_pod_priority '${worker_priority}'
-      --num_ps_pods '${ps_num}' --ps_resource_request 'cpu=${ps_cpu},memory=${ps_memory},ephemeral-storage=10240Mi'
+      --num_ps_pods '${ps_num}' --ps_resource_request 'cpu=${ps_cpu},memory=${ps_memory},ephemeral-storage=1024Mi'
       --ps_resource_limit '' --ps_pod_priority '${ps_priority}' --volume '' --image_pull_policy
       'Always' --restart_policy 'Never' --envs '' --extra_pypi_index 'https://pypi.org/simple'
       --namespace 'default' --num_minibatches_per_task '8' --docker_base_url 'unix://var/run/docker.sock'
