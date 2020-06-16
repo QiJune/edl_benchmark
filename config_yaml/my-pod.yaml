@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: test-pod
+    image: nginx:1.7.9
+    volumeMounts:
+    - mountPath: /testdata
+      name: mypvc
+  volumes:
+  - name: mypvc
+    persistentVolumeClaim:
+      claimName: fileserver-claim
+      readOnly: false

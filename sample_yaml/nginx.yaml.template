@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${job_name}
+  labels:
+    app: nginx
+spec:
+  replicas: ${replicas}
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: ${image}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: ${cpu}
+            memory: ${memory}
+            ephemeral-storage: 1024Mi
+          requests:
+            cpu: ${cpu}
+            memory: ${memory}
+            ephemeral-storage: 1024Mi
+      priorityClassName: ${priority}
+      restartPolicy: Always
