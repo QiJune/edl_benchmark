@@ -65,7 +65,7 @@ if __name__ == '__main__':
         "priority": "high",
     }
 
-    image = "gcr.io/deploy-sqlflow/" + "elasticdl:ci"
+    image = "o0o0o/elasticdl:ci"
 
     edl_cpu_job_config = {
         "image": image,
