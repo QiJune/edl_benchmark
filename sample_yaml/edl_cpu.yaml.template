@@ -47,11 +47,11 @@ spec:
     resources:
       limits:
         cpu: '${master_cpu}'
-        ephemeral-storage: 10240Mi
+        ephemeral-storage: 1024Mi
         memory: ${master_memory}
       requests:
         cpu: '${master_cpu}'
-        ephemeral-storage: 10240Mi
+        ephemeral-storage: 1024Mi
         memory: ${master_memory}
   priorityClassName: '${master_priority}'
   restartPolicy: Never
