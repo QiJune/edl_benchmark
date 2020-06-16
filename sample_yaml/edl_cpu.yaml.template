@@ -16,7 +16,7 @@ spec:
       --model_zoo '/model_zoo' --cluster_spec '' --cmd 'train' --minibatch_size '64'
       --log_level 'INFO' --dataset_fn 'dataset_fn' --loss 'loss' --optimizer 'optimizer'
       --callbacks 'callbacks' --eval_metrics_fn 'eval_metrics_fn' --custom_data_reader
-      'custom_data_reader' --model_def 'deepfm_functional_api.deepfm_functional_api.custom_model'
+      'custom_data_reader' --model_def 'mnist_functional_api.mnist_functional_api.custom_model'
       --model_params '' --get_model_steps '1' --data_reader_params '' --distribution_strategy
       'ParameterServerStrategy' --checkpoint_steps '0' --checkpoint_dir '' --keep_checkpoint_max
       '0' --output 'model_output' --docker_image_repository ''
@@ -30,7 +30,7 @@ spec:
       --namespace 'default' --num_minibatches_per_task '8' --docker_base_url 'unix://var/run/docker.sock'
       --docker_tlscert '' --docker_tlskey '' --yaml ''
       --use_go_ps '${use_go_ps}' --aux_params '' --log_file_path '' --tensorboard_log_dir
-      '' --num_epochs '${num_epochs}' --grads_to_wait '1' --training_data '/data/frappe/train'
+      '' --num_epochs '${num_epochs}' --grads_to_wait '1' --training_data '/data/mnist/train'
       --validation_data '' --evaluation_steps '0' --evaluation_start_delay_secs '100'
       --evaluation_throttle_secs '0' --checkpoint_dir_for_init '' --sync_version_tolerance
       '0' --log_loss_steps '100' --use_async 'True' --lr_staleness_modulation 'False'
