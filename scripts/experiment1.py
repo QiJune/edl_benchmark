@@ -29,7 +29,7 @@ def run_experiment(namespace, config, filename):
         # 2. start edl jobs
         for job in edl_jobs:
             handle.start_edl_job(job)
-            time.sleep(30)
+            time.sleep(20)
 
         # 3. wait for some edl jobs complete
         handle.wait_edl_job_completed(edl_jobs[0])
