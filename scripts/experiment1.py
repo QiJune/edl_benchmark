@@ -29,7 +29,7 @@ def run_experiment(namespace, config, filename):
         # 2. start edl jobs
         for job in edl_jobs:
             handle.start_edl_job(job)
-            time.sleep(100)
+            time.sleep(30)
 
         # 3. wait for some edl jobs complete
         handle.wait_edl_job_completed(edl_jobs[0])
@@ -41,6 +41,7 @@ def run_experiment(namespace, config, filename):
         handle.start_edl_job(edl_jobs[0])
         handle.wait_edl_job_completed(edl_jobs[0])
         handle.delete_edl_job(edl_jobs[0])
+        time.sleep(5)
 
         handle.start_edl_job(edl_jobs[1])
         handle.wait_edl_job_completed(edl_jobs[1])
@@ -64,12 +65,12 @@ if __name__ == '__main__':
 
     edl_cpu_job_config = {
         "image": image,
-        "num_epochs": 2,
+        "num_epochs": 10,
         "job_name": "edl-cpu-qianren",
         "ps_num": 2,
-        "worker_num": 6,
-        "master_cpu": 1,
-        "master_memory": "2048Mi",
+        "worker_num": 10,
+        "master_cpu": 2,
+        "master_memory": "4096Mi",
         "master_priority": "low",
         "ps_cpu": 1,
         "ps_memory": "2048Mi",
