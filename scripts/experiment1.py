@@ -41,7 +41,6 @@ def run_experiment(namespace, config, filename):
         handle.start_edl_job(edl_jobs[0])
         handle.wait_edl_job_completed(edl_jobs[0])
         handle.delete_edl_job(edl_jobs[0])
-        time.sleep(5)
 
         handle.start_edl_job(edl_jobs[1])
         handle.wait_edl_job_completed(edl_jobs[1])
