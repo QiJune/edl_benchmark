@@ -83,4 +83,5 @@ class API(object):
         cur_time = int(time.time() - start_time)
         nginx_cpus = self.client.get_cpus(self.nginx_job_config["job_name"])
         edl_cpus = self.client.get_cpus(self.edl_job_config["job_name"])
-        return (cur_time, nginx_cpus, edl_cpus)
+        total_cpus = nginx_cpus + edl_cpus
+        return (cur_time, nginx_cpus, edl_cpus, total_cpus)

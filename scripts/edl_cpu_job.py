@@ -12,7 +12,6 @@ class EdlCPUJobScheduler(object):
         job_name,
         ps_num,
         worker_num,
-        use_go_ps,
         master_cpu,
         master_memory,
         master_priority,
@@ -28,7 +27,6 @@ class EdlCPUJobScheduler(object):
         self.job_name = job_name
         self.ps_num = ps_num
         self.worker_num = worker_num
-        self.use_go_ps = use_go_ps
         self.master_cpu = master_cpu
         self.master_memory = master_memory
         self.master_priority = master_priority
@@ -53,7 +51,6 @@ class EdlCPUJobScheduler(object):
             num_epochs=str(self.num_epochs),
             ps_num=str(self.ps_num),
             worker_num=str(self.worker_num),
-            use_go_ps=str(self.use_go_ps),
             master_cpu=self.master_cpu,
             master_memory=self.master_memory,
             master_priority=self.master_priority,

@@ -47,7 +47,7 @@ def run_experiment(namespace, nginx_job_config, edl_cpu_job_config, filename):
 
     # 5. save results
     with open(filename + ".csv", "w") as f:
-        f.write("time,nignx_job,edl_job\n")
+        f.write("time,nignx_job,edl_job,total\n")
         for res in results:
             res = [str(r) for r in res]
             f.write(",".join(res) + "\n")
@@ -65,15 +65,14 @@ if __name__ == '__main__':
         "priority": "high",
     }
 
-    image = "o0o0o/elasticdl:ci"
+    image = "o0o0o/elasticdl:mnist-0704"
 
     edl_cpu_job_config = {
         "image": image,
-        "num_epochs": 60,
+        "num_epochs": 2,
         "job_name": "edl-cpu-qianren",
         "ps_num": 2,
         "worker_num": 10,
-        "use_go_ps": False,
         "master_cpu": 1,
         "master_memory": "1024Mi",
         "master_priority": "high",

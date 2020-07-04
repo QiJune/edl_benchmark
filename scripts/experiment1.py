@@ -60,15 +60,14 @@ def run_experiment(namespace, config, filename):
 
 if __name__ == '__main__':
     namespace = "default"
-    image = "o0o0o/elasticdl:ci"
+    image = "o0o0o/elasticdl:mnist-0704"
 
     edl_cpu_job_config = {
         "image": image,
-        "num_epochs": 20,
+        "num_epochs": 2,
         "job_name": "edl-cpu-qianren",
         "ps_num": 2,
         "worker_num": 6,
-        "use_go_ps": False,
         "master_cpu": 1,
         "master_memory": "2048Mi",
         "master_priority": "low",
